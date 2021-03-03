@@ -7,9 +7,10 @@
    <input type="text" id="figure_name" name="figure[name]" value="<%= @figure.name%>"><br>
    <br>
    <hr>
-   <label>Edit title</label><br> 
-       <%@figure.titles.each do |t|%>
-         <%=t.name%><br>
+   <label>Edit title</label><br>
+       <%Title.all.each do |t|%>
+       <label><%=t.name%></label>
+      <input type="checkbox" name="figure[title_ids]"[] id="<%=t.name%>">  value="<%=t.id%>"<br>
       <%end%>
    <hr>
    <label>Edit landmarks</label>
