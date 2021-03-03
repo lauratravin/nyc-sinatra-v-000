@@ -50,7 +50,7 @@ class FiguresController < ApplicationController
         #                         "landmark_ids"=>["10"]},
         #              "id"=>"6"}
 
+       @figure = Figure.update(params[:figure])
 
- end
 
 end
