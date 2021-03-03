@@ -50,7 +50,7 @@ class FiguresController < ApplicationController
         #                         "landmark_ids"=>["10"]},
         #              "id"=>"6"}
 
-       @figure = Figure.update(params[:figure])
+       @figure.update(params[:figure])
 
        unless params[:title][:name].empty?
         @figure.title_ids << Title.create(params[:title])
