@@ -20,11 +20,19 @@ class LandmarksController < ApplicationController
     @landmarks = Landmark.find(params[:id])
     erb :'landmarks/edit'
   end
-
+  #create
   post '/landmark' do
     @landmark = Landmark.create(params[:landmark])
 
     redirect "landmarks/#{@landmark.id}"
   end
+  #update, alternative isntead of patch when only few files
 
+  post '/landmark/:id' do
+    @landmark = Landmark.find(params[:id])
+    @landmark.name = params['landmark']['name']
+    @landmark.year_completed = params['landmark']['year_completed']
+    @landmark.save
+    redirect to "/landmarks/#{@landmark.id}"
+  end
 end
