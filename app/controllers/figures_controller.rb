@@ -17,7 +17,7 @@ class FiguresController < ApplicationController
 
 
   post '/figures'  do
-     binding.pry
+    #  binding.pry
     #  params with existing data
     #  {"figure"=>{"name"=>"Juan", "title_ids"=>["2"], "landmark_ids"=>["6"]},
     #   "title"=>{"name"=>""},
@@ -34,7 +34,7 @@ class FiguresController < ApplicationController
           end
           @figure.save
           redirect "/figures/#{@figure.id}"
-       binding.pry
+
   end
 
 
