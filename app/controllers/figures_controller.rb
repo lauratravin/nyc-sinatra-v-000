@@ -33,7 +33,7 @@ class FiguresController < ApplicationController
               @figure.titles << Title.create(params[:title])
           end
           @figure.save
-          redirect "/figures/#{{@figure.id}}"
+          redirect "/figures/#{@figure.id}"
 
   end
 
