@@ -21,4 +21,9 @@ class LandmarksController < ApplicationController
     erb :'landmarks/edit'
   end
 
+  post '/landmark' do
+    @landmark = Landmark.create[params[:landmark]
+    redirect 'landmark/#{@landmark.id}'
+  end
+
 end
