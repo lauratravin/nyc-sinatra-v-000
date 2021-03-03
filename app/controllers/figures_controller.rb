@@ -10,17 +10,30 @@ class FiguresController < ApplicationController
     erb :'figures/new'
   end
 
+  get '/figures/:id' do
+    @figure = Figure.find(params[:id])
+    erb :'figures/show'
+  end
+
+
   post '/figures'  do
      binding.pry
     #  params with existing data
     #  {"figure"=>{"name"=>"Juan", "title_ids"=>["2"], "landmark_ids"=>["6"]},
     #   "title"=>{"name"=>""},
     #    "Landmark"=>{"name"=>"", "year_completed"=>""}}
-      if params[:title][:name].empty? && params[:landmark][:name].empty?
+      
            @figure = Figure.create(params[:figure])
-           erb :'figures/index'
-      else
-      end
+           #it let update with  new title or landmark even if you chose some before
+           unless params[:landmark][:name].empty?
+             @figure.landmarks << Landmark.create(params[:landmark])
+           end
+
+          unless params[:title][:name].empty?
+              @figure.titles << Title.create(params[:title])
+          end
+          @figure.save
+          redirect "/figures/#{{@figure.id}}"
 
   end
 
