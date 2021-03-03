@@ -22,7 +22,7 @@ class FiguresController < ApplicationController
     #  {"figure"=>{"name"=>"Juan", "title_ids"=>["2"], "landmark_ids"=>["6"]},
     #   "title"=>{"name"=>""},
     #    "Landmark"=>{"name"=>"", "year_completed"=>""}}
-      
+
            @figure = Figure.create(params[:figure])
            #it let update with  new title or landmark even if you chose some before
            unless params[:landmark][:name].empty?
