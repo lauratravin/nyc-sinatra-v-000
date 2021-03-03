@@ -16,10 +16,10 @@ class FiguresController < ApplicationController
     #  {"figure"=>{"name"=>"Juan", "title_ids"=>["2"], "landmark_ids"=>["6"]},
     #   "title"=>{"name"=>""},
     #    "Landmark"=>{"name"=>"", "year_completed"=>""}}
-      # if params[:title][:name].empty? && params[:landmark][:name].empty?
-      #      @figure = Figure.create(params[:figure])
-      # else
-      # end
+      if params[:title][:name].empty? && params[:landmark][:name].empty?
+           @figure = Figure.create(params[:figure])
+      else
+      end
 
   end
 
