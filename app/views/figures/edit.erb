@@ -10,7 +10,7 @@
    <label>Edit title</label><br>
        <%Title.all.each do |t|%>
        <label><%=t.name%></label>
-      <input type="checkbox" name="figure[title_ids]"[] id="<%=t.name%>"  value="<%=t.id%>" <%='checked' if @figure.titles.include?(t)%>>
+      <input type="checkbox" name="figure[title_ids][]" id="<%=t.name%>"  value="<%=t.id%>" <%='checked' if @figure.titles.include?(t)%>>
       <br>
       <%end%>
       <br>
@@ -18,7 +18,7 @@
    <label>Edit landmarks</label>
          <%Landmark.all.each do |l|%>
          <label><%=l.name%></label>
-        <input type="checkbox" name="figure[landmark_ids]"[] id="<%=l.name%>"  value="<%=l.id%>" <%='checked' if @figure.landmarks.include?(l)%>>
+        <input type="checkbox" name="figure[landmark_ids][]" id="<%=l.name%>"  value="<%=l.id%>" <%='checked' if @figure.landmarks.include?(l)%>>
         <br>
         <%end%>
          <br>
