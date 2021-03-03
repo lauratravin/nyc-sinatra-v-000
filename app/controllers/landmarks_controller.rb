@@ -24,7 +24,7 @@ class LandmarksController < ApplicationController
   post '/landmark' do
     @landmark = Landmark.create(params[:landmark])
 
-    redirect "landmark/#{@landmark.id}"
+    redirect "landmarks/#{@landmark.id}"
   end
 
 end
