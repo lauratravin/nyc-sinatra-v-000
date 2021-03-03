@@ -41,5 +41,9 @@ class FiguresController < ApplicationController
 
   end
 
+ patch '/figures/:id' do
+         @figure = Figure.find_by_id(params[:id])
+         binding.pry
+ end
 
 end
