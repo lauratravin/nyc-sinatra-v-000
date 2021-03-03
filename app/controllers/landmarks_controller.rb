@@ -28,7 +28,7 @@ class LandmarksController < ApplicationController
   end
   #update, alternative isntead of patch when only few files
 
-  post '/landmark/:id' do
+  post '/landmarks/:id' do
     @landmark = Landmark.find(params[:id])
     @landmark.name = params['landmark']['name']
     @landmark.year_completed = params['landmark']['year_completed']
