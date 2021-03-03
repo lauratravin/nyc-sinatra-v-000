@@ -44,6 +44,13 @@ class FiguresController < ApplicationController
  patch '/figures/:id' do
          @figure = Figure.find_by_id(params[:id])
          binding.pry
+        #  params => {"_method"=>"patch",
+        #            "figure"=>  {"name"=>"Meres",
+        #                        "title_ids"=>["1", "2", "3", "4"],
+        #                         "landmark_ids"=>["10"]},
+        #              "id"=>"6"}
+
+
  end
 
 end
