@@ -12,7 +12,7 @@ class LandmarksController < ApplicationController
 
   get '/landmarks/:id' do
     # binding.pry
-    @landmarks = Landmark.find(params[:id])
+    @landmark = Landmark.find(params[:id])
     erb :'landmarks/show'
   end
 
