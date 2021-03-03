@@ -18,7 +18,7 @@ class FiguresController < ApplicationController
     #    "Landmark"=>{"name"=>"", "year_completed"=>""}}
       if params[:title][:name].empty? && params[:landmark][:name].empty?
            @figure = Figure.create(params[:figure])
-             erb :'figures/index'
+           erb :'figures/index'
       else
       end
 
